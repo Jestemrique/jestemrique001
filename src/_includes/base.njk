@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="{{ page.lang }}" dir="{{ languages[page.lang].dir or 'ltr' }}">
+  <head>
+    {% include 'partials/title-styles-and-meta.njk' %}
+    
+
+  </head>
+
+  <body>
+    {# {% include "partials/header.njk" %}
+    {% include "partials/navigation.njk" %}
+
+    <main>
+      <h1>{{ title }}</h1>
+      {{ content | safe }}
+    </main>
+    {% include "partials/footer.njk" %} #}
+
+
+{# ***************************************************************************************** #}
+    <div class="p-2
+                p-sm-3
+                p-md-4
+                mb-2
+                mb-sm-4
+                bg-light
+                shadow-sm
+                ">
+      {% include 'partials/header.njk' %}
+    </div>
+    <div class="container mt-3 mt-md-5">
+      <div class="row align-items-start">
+        {# Navigation #}
+        <div class="col col-md-2 col-lg-3 ep-sticky-bottom-mobile text-end ep-nav-mt">
+          {% include 'partials/navigation.njk' %}
+        </div>
+
+        {# Content #}
+
+
+        <div class="ep-content col-12 col-md-10 col-lg-9">
+          <div class="mb-6">
+            <h2 class="h1 border-bottom" >{{ title | safe }} </h2>
+          </div>
+          
+          {# {{ content | safe }} #}
+
+          {% block main_content %}
+            {# {{ content | safe }} #}
+          {% endblock %}
+
+
+        </div>
+        
+      </div> {# end row #}
+    </div> {# end container #}
+
+
+
+    {% include "partials/footer.njk" %} 
+
+{# ***************************************************************************************** #}
+
+
+  </body>
+</html>

@@ -1,0 +1,11 @@
+  <nav class="nav 
+            flex-md-column
+            inconsolata
+            ">
+      {% for item in navigation[page.lang] %}
+        <a class="nav-link" href="{{ item.url }}"> 
+          {{ item.text }}
+        </a>
+      {% endfor %}
+
+  </nav>
