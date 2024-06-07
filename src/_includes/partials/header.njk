@@ -22,7 +22,7 @@
                   rounded-3
                   shadow
                   " 
-           src="https://placehold.co/250x250" 
+           src="/assets/images/profile-pic-250x250.png" 
            alt="Header Image">
     </div>
     
@@ -45,7 +45,6 @@
       </h2>
       
       <span class="mt-2">
-      
       <a class="link-secondary 
                 link-offset-2 
                 link-underline-opacity-0 
@@ -75,16 +74,25 @@
 
       </span>
 
+      <span class="mt-2">
+        
         <nav>
-    <a href="{{ page.url }}" lang="{{ page.lang }}" hreflang="{{ page.lang }}">
-      {{ page.lang | upper }}
-    </a>
+          <a href="{{ page.url }}" lang="{{ page.lang }}" hreflang="{{ page.lang }}">
+            {{ page.lang | upper }}
+          </a>
 
-    {% for link in page.url | locale_links %}
-    <a href="{{ link.url }}" lang="{{ link.lang }}" hreflang="{{ link.lang }}">
-      {{ link.lang | upper }}</a>
-    {% endfor %}
-  </nav>
+          {% for link in page.url | locale_links %}
+          <a href="{{ link.url }}" lang="{{ link.lang }}" hreflang="{{ link.lang }}">
+            {{ link.lang | upper }}</a>
+          {% endfor %}
+        </nav>
+      </span>
+
+
+
+
+
+
     
     </div>
 
