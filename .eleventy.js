@@ -7,6 +7,7 @@ module.exports = eleventyConfig => {
         errorMode: 'allow-fallback'
     });
 
+    eleventyConfig.addFilter("debug", (content) => `${JSON.stringify(content, null , 4)}`);
 
     return {
         dir: {

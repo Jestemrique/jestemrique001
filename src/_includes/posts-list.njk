@@ -1,0 +1,9 @@
+{% extends "base.njk" %}
+
+
+{% block main_content %}
+
+
+{{ languages[page.lang].listOfPosts }}
+    {{ content | safe }}
+{% endblock %}
