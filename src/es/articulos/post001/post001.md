@@ -1,8 +1,9 @@
 ---
 layout: 'post.njk'
 title: 'This is the post 001'
+slugOverride: slug for post001
 tags: 
-  - posts
+  - post
   - javascript
 publicTags: 
   - javascript
