@@ -1,15 +1,18 @@
 {% extends "base.njk" %}
 
-
 {% block main_content %}
-
-
-    {{ content | safe }}
+{{ content | safe }}
 {% set languagePosts = "posts_" + page.lang %}
 <ul>
+    {{ page.lang }}
     {%- for post in collections[languagePosts] -%}
-    <li>{{ post.data.title }} - {{ post.data.lang }} - {{ post.data.tags }}</li>
+    <li>{{ post.data.date | epDate(page.lang) }} - {{ post.data.title }} </li>
     {%- endfor -%}
 </ul>
 
 {% endblock %}
+
+
+
+
+
