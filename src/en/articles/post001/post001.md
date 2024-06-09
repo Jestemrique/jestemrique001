@@ -2,7 +2,7 @@
 layout: 'post.njk'
 title: 'This is the post 001'
 tags: 
-  - posts
+  - post
   - javascript
 publicTags: 
   - javascript

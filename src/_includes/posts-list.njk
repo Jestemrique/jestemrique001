@@ -4,7 +4,6 @@
 {% block main_content %}
 
 
-{{ languages[page.lang].listOfPosts }}
     {{ content | safe }}
 {% set languagePosts = "posts_" + page.lang %}
 <ul>
