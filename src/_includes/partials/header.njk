@@ -76,13 +76,17 @@
 
     <div>
       <nav class="ep-language-menu">
-        <a class="link-secondary" href="{{ page.url }}" lang="{{ page.lang }}" hreflang="{{ page.lang }}">
-          {{ page.lang | upper }}
-        </a>
         {% for link in page.url | locale_links %}
         <a class="link-secondary link-underline-opacity-0" href="{{ link.url }}" lang="{{ link.lang }}"
           hreflang="{{ link.lang }}">
-          {{ link.lang | upper }}</a>
+          {%- if link.lang == "en" %}
+          <img src="/assets/images/uk-icon.png" alt="English">
+          {%- endif -%}
+          {%- if link.lang == "es" %}
+          <img src="/assets/images/sp-icon.png" alt="Español">
+          {%- endif -%}
+
+        </a>
         {% endfor %}
       </nav>
     </div>
