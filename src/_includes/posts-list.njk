@@ -6,4 +6,11 @@
 
 {{ languages[page.lang].listOfPosts }}
     {{ content | safe }}
+{% set languagePosts = "posts_" + page.lang %}
+<ul>
+    {%- for post in collections[languagePosts] -%}
+    <li>{{ post.data.title }} - {{ post.data.lang }} - {{ post.data.tags }}</li>
+    {%- endfor -%}
+</ul>
+
 {% endblock %}
