@@ -1,15 +1,23 @@
 {% extends "base.njk" %}
 
-
 {% block main_content %}
-
-
-    {{ content | safe }}
+{{ content | safe }}
 {% set languagePosts = "posts_" + page.lang %}
-<ul>
-    {%- for post in collections[languagePosts] -%}
-    <li>{{ post.data.title }} - {{ post.data.lang }} - {{ post.data.tags }}</li>
-    {%- endfor -%}
-</ul>
+{%- for post in collections[languagePosts] -%}
+<a      class="
+            link-secondary 
+            link-offset-2 
+            link-underline-opacity-0 
+            link-opacity-75-hover
+            link-underline-opacity-25-hover
+        " 
+        href="{{ post.url }}">
+                {%- if post.data.draft and post.data.draft == true -%}
+                    <span class="badge text-bg-warning p-1 px-2 me-2 rounded fs-6">Draft</span>
+                {%- endif -%}
+    {{ post.data.title }}
+    <span class="fs-6">( {{ post.data.date | epDate(page.lang) }} ) </span>
+</a></br>
+{%- endfor -%}
 
 {% endblock %}
