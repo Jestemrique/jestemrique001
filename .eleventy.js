@@ -13,6 +13,10 @@ module.exports = eleventyConfig => {
 
 
 
+    //Multiple config files
+    // eleventyConfig.addPlugin(require('./config/custom-markdown-rules.js'));
+    // eleventyConfig.addPlugin(require('./config/custom-syntax-highlighting.js'));
+    eleventyConfig.addPlugin(require('./config/custom-filters.js'));
     eleventyConfig.addFilter("debug", (content) => `${JSON.stringify(content, null , 4)}`);
 
     return {
