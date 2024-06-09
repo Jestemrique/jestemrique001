@@ -7,6 +7,13 @@ module.exports = eleventyConfig => {
         errorMode: 'allow-fallback'
     });
 
+    eleventyConfig.addCollection("languageCollection", function (collection) {
+        return collection.getAll().filter((post) => post.data.lang);
+      });
+
+
+
+    eleventyConfig.addFilter("debug", (content) => `${JSON.stringify(content, null , 4)}`);
 
     return {
         dir: {

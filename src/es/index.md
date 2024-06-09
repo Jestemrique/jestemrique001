@@ -1,6 +1,5 @@
 ---
-title: 'Página en español'
+title: 'Inicio'
 description: 'Esta es la versión en español de la página inical'
+layout: 'posts-list.njk'
 ---
-
-Este es un starter mínimo para contenido localizado con Eleventy.
